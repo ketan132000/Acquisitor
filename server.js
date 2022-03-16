@@ -2,7 +2,7 @@ const express = require('express');
 const app = express(); 
 const ejs = require('ejs');
 const port = 5500 
-// const mysql = require('mysql');
+
 
 const mysql = require('mysql');
 const con = mysql.createConnection({
@@ -13,6 +13,7 @@ const con = mysql.createConnection({
   });
 
 
+app.set('view engine', 'ejs');
 
 
 app.use(express.urlencoded({extended: true}));
@@ -24,63 +25,55 @@ app.get('/', (req, res) => {
   });
 
 app.post('/', (req, res) => {
-    // Insert Login Code Here
+  
     let username = req.body.username;
     let password = req.body.password;
     if(username=='ketanchawla2000@gmail.com' && password=='mN2bFn@1'){
-      // res.send(`Username: ${username} Password: ${password}`);
-      res.sendFile(__dirname + '/static/user.html');
+      res.redirect('/excel');
     }
-    // res.send(`Username: ${username} Password: ${password}`);
     else{
-      // res.send(`Username: ${username} Password: ${password}`);
       res.sendFile(__dirname + '/static/invalidlogin.html');
-      // res.send('Invalid username or password');
     }
-    
   });
-  app.get('/profile',(req,res) => {
-    // res.sendFile(__dirname + '/static/user.html');
-    con.query('SELECT * FROM adobe.panel_members;', (err,result,field) => 
-    {
-    if(err) throw err;
-  
-    console.log('Data received from Db:');
-    // console.log(result[1].emp_name);
-    // console.log(result[1].rm);
-    // res.send('my name is ketan');
-    // res.render('user.pug', { name: result[1].emp_name, rm:result[1].rm });
-    result.forEach(item => {
-      console.log('name:',item.emp_name, 'RM:', item.rm);
-      console.log(item.rm);
-      console.log()
-    });
-    });
-  });
-
-
-  app.set('view engine', 'ejs');
 
   app.get('/excel', function (req, res) {
    
-    // Render page using renderFile method
     con.query('SELECT * FROM adobe.panel_members;', (err,result,field) => 
     {
     if(err) throw err;
-  
-    console.log('Data received from Db:');
-    // console.log(result[1].emp_name);
-    // console.log(result[1].rm);
-    // res.send('my name is ketan');
-    // res.render('user.pug', { name: result[1].emp_name, rm:result[1].rm });
-    result.forEach(item => {
-      console.log('name:',item.emp_name, 'RM:', item.rm);
-      console.log(item.rm);
-      console.log()
-    });
 
     res.render('excel.ejs', {details:result});
   });
+});
+
+
+app.get('/edit',(req,res)=>{
+  let empid=req.query.emp_id;
+
+  con.query(`SELECT * FROM adobe.panel_members WHERE emp_id=${empid};`, (err,result,field) => 
+    {
+    if(err) throw err;
+  
+    res.render('edit.ejs', {details:result[0]});
+    });
+
+
+ 
+
+});
+
+
+app.post('/edit',(req,res)=>{
+  let empid=req.body.empid
+  let empname=req.body.name;
+
+  con.query(`UPDATE adobe.panel_members SET emp_name="${empname}" WHERE emp_id=${empid};`, (err,result,field) => 
+    {
+    if(err) throw err;
+
+    res.redirect('/excel')
+    });
+
 });
 
   app.listen(port, () => console.log(`This app is listening on http://localhost:${port}`));
