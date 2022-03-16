@@ -60,6 +60,7 @@
             <th scope="col">CPP</th>
             <th scope="col">ACCEPTANCE</th>
             <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
           </tr>
          </thead>
         <tbody>
@@ -74,10 +75,12 @@
             <td><%= details[i].cpp %></td>
             <td><%= details[i].total_accept%></td>
             <td><a href="edit?emp_id=<%= details[i].emp_id %>">Edit</a></td>
+            <td><a href="delete?emp_id=<%= details[i].emp_id %>">Delete</a></td>
           </tr> 
         <% } %>
         </tbody>
       </table>
     </table>
+    <a href="add">Add</a>
 </body>
 </html>
