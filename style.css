@@ -13,6 +13,9 @@
   /* background-color: #b44593;
 } */
 
+html, body{
+  
+}
 
 .col-xl-10{
   /* position: relative; */
@@ -82,11 +85,34 @@
   font-size: small;
 }
 
+/* .nav-bg{
+  background-color: #f00408;
+} */
+
 .table{
   text-align: center;
   /* padding-left: 10px; */
 }
 
+
+
 #head{
   font-size: large;
+}
+
+#edit{
+  color:whitesmoke;
+  text-decoration: none;
+}
+
+#delete{
+  color:whitesmoke;
+  text-decoration: none;
+}
+
+.icon{
+  text-align: right;
+  margin-right: 35px;
+  font-size: 30px;
+  color: #000;
 }
