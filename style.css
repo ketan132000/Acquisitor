@@ -13,10 +13,6 @@
   /* background-color: #b44593;
 } */
 
-html, body{
-  
-}
-
 .col-xl-10{
   /* position: relative; */
   top: -40px;
@@ -28,13 +24,13 @@ html, body{
 
 .gradient-custom-2 {
   /* fallback for old browsers */
-  background: #fccb90;
+  background: rgb(16, 160, 226);
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #d8363a, #b44593);
+  background: -webkit-linear-gradient(to right, rgb(38, 112, 196), #e0dcdf);
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #f00408, #eeeaee);
+  background: linear-gradient(to right, rgb(38, 112, 196));
 }
 
 @media (min-width: 768px) {
@@ -116,3 +112,30 @@ html, body{
   font-size: 30px;
   color: #000;
 }
+
+
+a,a:hover{
+  color: whitesmoke;
+}
+.navv{
+  background-color: #e74f51;
+  color:whitesmoke;
+}
+.nav-link{
+  color: whitesmoke;
+}
+.nav-link:hover{
+  color: whitesmoke;
+}
+.nav-link:active{
+  color: whitesmoke;
+}
+.nav-link[tabindex]:focus{
+  color: whitesmoke;
+}
+.table-responsive{
+  margin-top: 200px;
+}
+/* New Navbar */
+
+

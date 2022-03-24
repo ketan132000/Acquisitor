@@ -1,0 +1,24 @@
+/* .container{ */
+    /* margin-top:  */
+    /* width: 80%; */
+    /* margin: auto; */
+    /* margin-top: 2rem ; */
+/* } */
+/* .col{ */
+    /* background-color:teal; */
+    /* padding: 1.5rem; */
+    /* font-size: 4vw; */
+/* } */
+
+label{margin-left: 20px;}
+#datepicker{width:350px; margin: 0 auto;}
+#datepicker > span:hover{cursor: pointer;}
+
+.datepicker{
+    background-color:whitesmoke;
+    color:black;
+    padding: 10px;
+    /* text-align: center; */
+    /* font-size: 1.5vw; */
+    /* width: 50%; */
+}

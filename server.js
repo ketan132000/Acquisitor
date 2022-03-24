@@ -7,7 +7,7 @@ var mysql = require('mysql');
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: "mN2bFn@1",
+    password: "Root240222@",
     datasbase:'adobe'
   });
 
@@ -28,23 +28,41 @@ app.post('/', (req, res) => {
   
     let username = req.body.username;
     let password = req.body.password;
-    if(username=='ketanchawla2000@gmail.com' && password=='mN2bFn@1'){
-      res.redirect('/excel');
+    con.query(`SELECT * FROM adobe.users WHERE email='${username}' AND password='${password}';`, (err,result,field) => 
+    {
+    if(err) throw err;
+    console.log(result);
+    if(result.length>0 && username=='ketanchawla2000@gmail.com'){
+    res.redirect('/ketan');
+    }
+    else if(result.length>0 && username=='gaurav.sharma0865@gmail.com'){
+      res.redirect('/gaurav');
     }
     else{
       res.sendFile(__dirname + '/static/invalidlogin.html');
     }
   });
+    
+  });
+
+  app.get('/ketan', (req, res) => {
+    res.render('dashboard.ejs', {});
+  });
+
+
+  app.get('/gaurav',(req,res)=>{
+    res.render('dashboard1.ejs',{});
+  });
 
   app.get('/excel', function (req, res) {
-   
+    console.log(req.body)
     con.query('SELECT * FROM adobe.panel_members;', (err,result,field) => 
     {
     if(err) throw err;
-
     res.render('excel.ejs', {details:result});
+    });
   });
-});
+
 
 
 //EDIT PAGE
@@ -117,10 +135,17 @@ app.post('/add',(req,res)=>{
 
 });
 
-
+app.get('/add_interview',(req,res)=>{
+  con.query('SELECT * FROM adobe.panel_members;', (err,result,field) => 
+    {
+    if(err) throw err;
+    res.render('interview.ejs', {details:result});
+    });
+});
 
 app.post('/add_interview',(req,res)=>{
   let date=req.body.date;
+  let empid=req.body.empid;
   date=date.substring(0,4)+'_'+date.substring(5,7)+'_'+date.substring(8,10);
   console.log(date);
   let dates=[]
@@ -142,24 +167,50 @@ app.post('/add_interview',(req,res)=>{
     }
 
     if(req.body.hasOwnProperty("add")){
-      con.query(`UPDATE adobe.panel_members SET d_2022_04_18=d_2022_04_18 + 1 where emp_id=11112;`, (err,result,field) => 
+      con.query(`UPDATE adobe.panel_members SET d_2022_04_18=d_2022_04_18 + 1 where emp_id=${empid};`, (err,result,field) => 
       {
-      if(err) throw err;  
+      if(err) throw err; 
+      res.redirect('/add_interview');
       });
     }
     else{
-      con.query(`UPDATE adobe.panel_members SET d_2022_04_18=d_2022_04_18 - 1 where emp_id=11112;`, (err,result,field) => 
+      con.query(`UPDATE adobe.panel_members SET d_2022_04_18=d_2022_04_18 - 1 where emp_id=${empid};`, (err,result,field) => 
       {
-      if(err) throw err;  
+      if(err) throw err; 
+      con.query(`UPDATE adobe.panel_members SET Decline=Decline + 1 where emp_id=${empid};`, (err,result,field) => 
+      {
+      if(err) throw err;
+      res.redirect('/add_interview');  
+      }); 
       });
+      
     }
     });
+ 
+});
 
-  if(dates=='')
-  console.log("Invalid Date");
-  else
-  console.log(date.charAt(5)+date.charAt(6));
+
+
+
+
+
+
+
+app.post('/date',(req,res)=>{
+  let date=req.body.date;
+  console.log(date);
   res.redirect('/excel');
+});
+
+
+
+app.get('/interview_tracker',(req,res)=>{
+  con.query('SELECT * FROM adobe.panel_members;', (err,result,field) => 
+    {
+    if(err) throw err;
+
+    res.render('interview.ejs', {details:result});
+  });
 });
 
 app.listen(port, () => console.log(`This app is listening on http://localhost:${port}`));

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Acquisitor</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylehome.css">
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo"><img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" alt=""><p>Adobe</p> </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" >Org Chart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="interview_tracker" class="nav-link">Interview Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Profile</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <input type="text">
+                    <button type="submit">Search</button>
+                </li> -->
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+</header>
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://chiefexecutive.net/wp-content/uploads/2022/02/AdobeStock_359716486-1280x720.jpg" class="d-block w-100" alt="...">
+        <!-- <div class="carousel-caption d-none d-md-block"> -->
+          <!-- <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://media.istockphoto.com/vectors/vector-illustration-of-an-abstract-scheme-which-contains-people-icons-vector-id1247980427?k=20&m=1247980427&s=612x612&w=0&h=HorA1pETKhwWYMMYLLwTlq2UfgNcWlBL2EPMtHhw4YI=" class="d-block w-100" alt="...">
+        <!-- <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div> -->
+      </div>
+      <div class="carousel-item">
+        <img src="https://t4.ftcdn.net/jpg/02/64/22/57/240_F_264225700_LV9QdGs4Z111cT3nFLZ6FlHnI0gHLzCW.jpg" class="d-block w-100" alt="...">
+        <!-- <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div> -->
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+</script>
+</body>
+</html>

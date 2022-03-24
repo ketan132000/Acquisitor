@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+body{
+    /* background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c); */
+    background-color: #a3a0a0;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000000;
+    border: 2px ;
+    border-radius: 20px;
+}
+
+.nav-link{
+    color: #050505;
+    background-color: #ffffff;
+    border: 2px #a3a0a0;
+    border-radius: 20px;
+}
+.nav-logo{
+    font-size: 1.2rem;
+    /* font-weight: 500; */
+    font-weight: bold;
+    color: #000000;
+}
+.nav-logo:hover{
+    color: #000000;
+}
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        margin-top: 10px;
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .w-100{
+        /* padding-top: 50px; */
+        /* padding-left: 50px;
+        padding-right: 50px; */
+        height: 300px;
+    }
+
+}
+img  {
+    vertical-align: middle;
+    height: auto;
+    margin-top: 2px;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+p{
+    margin-bottom: 0;
+}
+.carousel-item{
+    height: 400px;
+}
+.w-100{
+    /* padding-top: 50px; */
+    /* padding-left: 150px;
+    padding-right: 150px; */
+    height: 500px;
+}
+
+/* .nav-link:hover{
+    color: brown;
+} */
+
+
+/* Excel Table */
+
+.table-responsive{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    /* border: 2px solid black; */
+    /* padding-bottom: 0px; */
+  }
+.table{
+    text-align: center;
+    background-color:white;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* padding-left: 10px; */
+    /* padding-bottom: 0; */
+  }
+  
+  
+  
+  #head{
+    font-size: large;
+  }
+  
+  #edit{
+    color:whitesmoke;
+    text-decoration: none;
+  }
+  
+  #delete{
+    color:whitesmoke;
+    text-decoration: none;
+  }
+  
+  .icon{
+    text-align: right;
+    margin-right: 35px;
+    font-size: 30px;
+    color: #000;
+  }
+  
+  
+  a,a:hover{
+    color: whitesmoke;
+  }
+  /* .navv{
+    background-color: #e74f51;
+    color:whitesmoke;
+  } */
+  .nav-link{
+    color:  black;
+  }
+  .nav-link:hover{
+    color: whitesmoke;
+  }
+  .nav-link:active{
+    color: whitesmoke;
+  }
+  .nav-link[tabindex]:focus{
+    color: whitesmoke;
+  }
+
+  label{margin-left: 20px;}
+  #datepicker{width:350px; margin: 0 auto;}
+  #datepicker > span:hover{cursor: pointer;}
+  
+  .datepicker{
+      background-color:whitesmoke;
+      color:black;
+      padding: 10px;
+      /* text-align: center; */
+      /* font-size: 1.5vw; */
+      /* width: 50%; */
+  }
+
+  #send_date{
+      margin-left: 5px;
+      font-size: 15px;
+  }
