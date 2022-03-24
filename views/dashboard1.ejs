@@ -19,6 +19,7 @@
     
 </head>
 <body>
+    
     <div class="vertical-nav bg-white" id="sidebar">
         <div class="py-4 px-3 mb-4 ">
            <div class="media d-flex align-items-center"><img src="https://lh3.googleusercontent.com/a-/AOh14GiwVkqKHcKE218wgsEDTYFOxSseJTW-XQCPVw1N=s48" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm"> 
@@ -35,17 +36,17 @@
       
         <ul class="nav flex-column bg-white mb-0">
           <li class="nav-item">
-            <a href="/home" class="nav-link text-dark font-italic bg-light">
+            <a href="/gaurav" class="nav-link text-dark font-italic bg-light">
                       <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                       Dashboard
                   </a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic">
                       <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
                       About
                   </a>
-          </li> -->
+          </li>
            <li class="nav-item">
             <a href="add_interview" class="nav-link text-dark font-italic">
                       <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
@@ -60,101 +61,51 @@
           </li>
         </ul>
       
-       <!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
-      
-        <ul class="nav flex-column bg-white mb-0">
-          <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                      <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
-                      Area charts
-                  </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                      <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
-                      Bar charts
-                  </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                      <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
-                      Pie charts
-                  </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                      <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
-                      Line charts
-                  </a>
-          </li>
-        </ul>-->
       </div> 
-
-      
-      
+      <div class="page-content" id="content">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Navbar</a>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit" id="searchbtn">Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
       
       <!-- Page content holder -->
-      <div class="page-content p-5" id="content">
-        <!-- Toggle button -->
-        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
-
-
-        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://chiefexecutive.net/wp-content/uploads/2022/02/AdobeStock_359716486-1280x720.jpg" class="d-block w-100" alt="...">
-            </div> -->
-            <!-- <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
-            </div> -->
-          <!-- </div> -->
-          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button> -->
-        <!-- </div> -->
+       <div class="page-content p-5" id="content">
 
         <div class="container-fluid">
           <div class="row">
             <div class="col">
               <div class="card" style="width: 25rem; margin: auto auto; margin-top: 30px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body" >
                   <h5 class="card-title">Total Acceptance</h5>
                   <p class="card-text">45</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 25rem;  margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">Total Decline</h5>
                   <p class="card-text">20</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 25rem;  margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">Acceptance(March)</h5>
                   <p class="card-text">5</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-light" style="font-size:1rem;font-weight: bolder;">View List</a> -->
                 </div>
               </div>
             </div>
@@ -163,30 +114,30 @@
             <div class="col">
               <div class="card" style="width: 25rem;  margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">Decline(March)</h5>
                   <p class="card-text">4</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 25rem;  margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">Active Panelists</h5>
                   <p class="card-text">5</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 25rem;   margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">Java</h5>
                   <p class="card-text">2</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
@@ -195,30 +146,30 @@
             <div class="col">
               <div class="card" style="width: 25rem;  margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">CPP</h5>
                   <p class="card-text">1</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 25rem;   margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">C SHARP</h5>
                   <p class="card-text">0</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" style="width: 25rem;  margin: auto auto; margin-top: 20px;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-body" style="background-color:gray">
+                <div class="card-body">
                   <h5 class="card-title">Python</h5>
                   <p class="card-text">1</p>
-                  <a href="#" class="btn btn-dark">View List</a>
+                  <!-- <a href="#" class="btn btn-dark">View List</a> -->
                 </div>
               </div>
             </div>

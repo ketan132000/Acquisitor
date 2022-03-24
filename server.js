@@ -7,7 +7,7 @@ var mysql = require('mysql');
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: "{password}", // User's password
+    password: "mN2bFn@1", // User's password
     datasbase:'adobe'
   });
 
@@ -129,9 +129,41 @@ app.post('/add',(req,res)=>{
 
 
 app.get('/add_interview',(req,res)=>{
-  con.query('SELECT * FROM adobe.panel_members;', (err,result,field) => {
+  con.query('SELECT * FROM adobe.panel_members;', (err,result1,field) => {
     if(err) throw err;
-    res.render('interview.ejs', {details:result});
+    con.query('SELECT * FROM adobe.month;', (err,result2,field) => {
+      console.log(result2[0].val);
+      let month=result2[0].val;
+      month=month.replace('-','_');
+      const tableColumns = []
+
+  const columns = ["month_"+month+"_a", "month_"+month+"_d"]
+  console.log(columns);
+
+  con.query(`DESCRIBE adobe.panel_members;`, (err,result,field) => {
+    if(err) throw err; 
+    
+    result.forEach(i => {
+      tableColumns.push(i.Field);
+    });
+
+    columns.forEach(async col => {
+      if(!tableColumns.includes(col)){
+        await con.query(`ALTER TABLE adobe.panel_members ADD ${col} int DEFAULT 0;`, (err,result,field) => {
+          if(err) throw err;  
+        //  return res.render('interview.ejs', {details:result1, months:columns,current_month:month.substring(5,7)});
+        });
+      }
+      // else{
+      //  return res.render('interview.ejs', {details:result1, months:columns,current_month:month.substring(5,7)});
+      // }
+      
+      });
+      return res.render('interview.ejs', {details:result1, months:columns,current_month:month.substring(5,7)});
+    });
+     
+    });
+    
   });
 });
 
@@ -139,6 +171,8 @@ app.get('/add_interview',(req,res)=>{
 app.post('/add_interview',(req,res)=>{
   let date=req.body.date;
   let empid=req.body.empid;
+  
+
   date=date.substring(0,4)+'_'+date.substring(5,7)+'_'+date.substring(8,10);
   console.log(date);
   const tableColumns = []
@@ -177,10 +211,18 @@ app.post('/add_interview',(req,res)=>{
 });
 
 
+
+
+
+
 app.post('/date',(req,res)=>{
-  let date=req.body.date;
-  console.log(date);
-  res.redirect('/excel');
+  let month=req.body.month;
+  // console.log(month);
+  con.query(`UPDATE adobe.month SET val='${month}' where id=1 ;`, (err,result,field) => {
+    if(err) throw err;
+    res.redirect('/add_interview');
+  });
+
 });
 
 

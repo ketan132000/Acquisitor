@@ -19,11 +19,11 @@
   </head>
 <body>
 
-  <header class="header">
-    <nav class="navbar">
+  <!-- <header class="header"> -->
+    <!-- <nav class="navbar"> -->
         <!-- <a href="home" class="nav-logo"><img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" alt=""><p>Adobe</p> </a> -->
-        <ul class="nav-menu">
-            <li class="nav-item">
+        <!-- <ul class="nav-menu"> -->
+            <!-- <li class="nav-item">
                 <a href="/home" class="nav-link" >Dashboard</a>
             </li>
         </ul>
@@ -33,8 +33,15 @@
             <span class="bar"></span>
         </div>
     </nav>
-</header>
+</header> -->
 
+  <div class="month-picker">
+    <form action="/date" method="POST">
+    <input type="month" name="month">
+    <button type="submit">Search</button>
+  </form>  
+<h1 style="margin-top:15px ;">Current Month: <%= current_month %></h1>
+  </div>
 
   <div class="table-responsive">
     <table class="table table-hover">
@@ -47,6 +54,8 @@
             <th scope="col">Readiness</th>
             <th scope="col">Java</th>
             <th scope="col">CPP</th>
+            <th scope="col">Accept</th>
+            <th scope="col">Decline</th>
             <th scope="col">Date</th>
             <th scope="col">Add</th>
             <th scope="col">Remove</th>
@@ -62,6 +71,8 @@
             <td><%= details[i].ready %></td>
             <td><%= details[i].java %></td>
             <td><%= details[i].cpp %></td>
+            <td><%= details[i][months[0]] %></td>
+            <td><%= details[i][months[1]] %></td>
             <form action="/add_interview" method="POST"><td><input type="date" placeholder="Enter date" name="date" class="txtDate" placeholder="Enter Date"></td>
             <td><button class="btn btn-dark" type="Submit" name="add"><i class="fa fa-plus-circle"></i></button></td>
             <td><button class="btn btn-dark" type="Submit" name="remove" ><i class="fa fa-minus-circle" style="background-color: black;"></i></button></td>
